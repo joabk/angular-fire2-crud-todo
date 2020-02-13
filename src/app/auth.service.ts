@@ -23,4 +23,16 @@ export class AuthService {
       })
   }
 
+  login(email: string, password: string){
+    this.fAuth.auth.signInWithEmailAndPassword(email, password)
+    .then(response=>{
+      console.log("You are logged in ", response);
+    })
+    .catch(error=>{
+      console.log("Something went wrong ", error);
+    })
+  }
+
+
+
 }
